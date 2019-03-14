@@ -6,7 +6,7 @@
                 <span
                     class="list-control-filter-item"
                     :class="{on: item === filterBrand}"
-                    v-for="item in brands"
+                    v-for="item in brands" :key=item.index 
                     @click="handleFilterBrand(item)">{{ item }}</span>
             </div>
             <div class="list-control-filter">
@@ -14,7 +14,7 @@
                 <span
                     class="list-control-filter-item"
                     :class="{on: item === filterColor}"
-                    v-for="item in colors"
+                    v-for="item in colors" :key=item.index
                     @click="handleFilterColor(item)">{{ item }}</span>
             </div>
             <div class="list-control-order">

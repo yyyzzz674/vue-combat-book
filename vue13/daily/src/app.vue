@@ -8,7 +8,7 @@
 				 :class="{ on: type === 'daily' }" 
 				 @click="showThemes = !showThemes">主题日报</div>
 			<ul v-show="showThemes">
-				<li v-for="item in themes">
+				<li v-for="item in themes" v-bind:key="item">
 					<a
 					 	:class="{ on: item.id === themeId && type === 'daily' }"
 					 	@click="handleToTheme(item.id)">{{ item.name }}</a>
@@ -17,7 +17,7 @@
 		</div>
 		<div class="daily-list" ref="list" @scroll="handleScroll">
 			<template v-if="type === 'recommend'">
-				<div v-for="list in recommendList">
+				<div v-for="list in recommendList" :key="list">
 					<div class="daily-date">{{ formatDay(list.date) }}</div>
 					<Item 
 						v-for="item in list.stories" 

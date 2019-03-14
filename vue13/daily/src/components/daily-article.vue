@@ -4,7 +4,7 @@
 		<div class="daily-article-content" v-html="data.body"></div>
 		<div class="daily-comments" v-show="comments.length">
 			<span>评论 ({{ comments.length }}) </span>
-			<div class="daily-comment" v-for="comment in comments">
+			<div class="daily-comment" v-for="comment in comments" :key="comment.id">
 				<div class="daily-comment-avatar">
 					<img :src="comment.avatar">
 				</div>
